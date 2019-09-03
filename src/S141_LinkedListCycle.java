@@ -44,14 +44,13 @@ public class S141_LinkedListCycle {
 
     // 重新赋值法
     static boolean hasCycle1(ListNode head) {
-        ListNode p1 = head;
-        ListNode p2 = head;
-        while(p2 != null && p2.next != null){
-            p1 = p1.next;
-            p2 = p2.next.next;
-            if(p1 == p2){
+        while (null != head){
+            if (head.val == 99897){
                 return true;
+            } else {
+                head.val = 99897;
             }
+            head = head.next;
         }
         return false;
     }
